@@ -1,0 +1,62 @@
+{
+  "name": "lp-staking-contract",
+  "version": "1.0.0",
+  "description": "Automata DRIP LP Staking Contract",
+  "directories": {
+    "test": "test"
+  },
+  "main": "truffle-config.js",
+  "scripts": {
+    "compile": "npx truffle compile --all",
+    "test": "npx truffle test --compile-none",
+    "ctest": "yarn compile && yarn test",
+    "coverage": "npx truffle run coverage",
+    "lint": "npx solhint contracts/**/*.sol && npx solhint contracts/**/**/*.sol",
+    "prettier": "prettier --write contracts/**/*.sol",
+    "deploy-goerli": "npx truffle migrate --network goerli --reset",
+    "verify-goerli": "npx truffle run verify LPStaking --network goerli",
+    "flatten": "truffle run flatten contracts/LPStaking.sol"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazunetakeda25/lp-staking-contract.git"
+  },
+  "keywords": [
+    "truffle",
+    "ethereum",
+    "automata",
+    "LP Staking",
+    "LP"
+  ],
+  "author": "Kazune Takeda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kazunetakeda25/lp-staking-contract.git/issues"
+  },
+  "homepage": "https://github.com/kazunetakeda25/lp-staking-contract.git#readme",
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.15",
+    "@openzeppelin/truffle-upgrades": "^1.11.0",
+    "@truffle/hdwallet-provider": "^1.7.0",
+    "bn.js": "^5.2.0",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "chai-bn": "^0.3.0",
+    "dotenv": "^10.0.0",
+    "eth-gas-reporter": "^0.2.22",
+    "ganache": "^7.0.1",
+    "ganache-cli": "^6.12.2",
+    "ganache-time-traveler": "^1.0.16",
+    "prettier": "^2.4.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "solhint": "^3.3.6",
+    "solidity-coverage": "^0.7.18",
+    "truffle": "^5.4.33",
+    "truffle-contract-size": "^2.0.1",
+    "truffle-flatten": "^1.0.8",
+    "truffle-plugin-verify": "^0.5.20"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0"
+  }
+}
